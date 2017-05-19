@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.6
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ElectronDemo.Application", "ElectronDemo.application\ElectronDemo.Application.csproj", "{8E35E8F4-4865-49A6-A5D7-8CCE95B9F687}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01. UI", "01. UI", "{8717158E-A06A-4BBA-9562-A7DB7827D63D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04. Crosscutting", "04. Crosscutting", "{48F65559-D558-4FAA-844F-BE6A65923A1F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kastwey.EpubReader", "EpubReader\Kastwey.EpubReader.csproj", "{02228927-019E-4B46-A60C-E08C81E3A2CE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8E35E8F4-4865-49A6-A5D7-8CCE95B9F687}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E35E8F4-4865-49A6-A5D7-8CCE95B9F687}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E35E8F4-4865-49A6-A5D7-8CCE95B9F687}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E35E8F4-4865-49A6-A5D7-8CCE95B9F687}.Release|Any CPU.Build.0 = Release|Any CPU
+		{02228927-019E-4B46-A60C-E08C81E3A2CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02228927-019E-4B46-A60C-E08C81E3A2CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02228927-019E-4B46-A60C-E08C81E3A2CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02228927-019E-4B46-A60C-E08C81E3A2CE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8E35E8F4-4865-49A6-A5D7-8CCE95B9F687} = {8717158E-A06A-4BBA-9562-A7DB7827D63D}
+		{02228927-019E-4B46-A60C-E08C81E3A2CE} = {48F65559-D558-4FAA-844F-BE6A65923A1F}
+	EndGlobalSection
+EndGlobal

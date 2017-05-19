@@ -1,0 +1,21 @@
+﻿@{
+    ViewData["Title"] = "Inicio";
+}
+<h2>Pantalla principal</h2>
+<p>Aunque esto es una web, su look and feel puede ser el de una app de escritorio.</p>
+<p>Podemos usar un diseño de escritorio, y adaptarlo incluso según el sistema operativo.</p>
+<button id="btnPress">Púlsame</button>
+@section scripts
+{
+	<script type="text/javascript">
+		$(function () {
+			alert("¡Hola!");
+			$("#btnPress").on("click", function (e) {
+				alert("si!");
+				const { dialog }  = require('electron').remote
+				console.log(dialog.showOpenDialog({ properties: ['openFile', 'openDirectory', 'multiSelections'] }))
+			});
+		});
+
+	</script>
+	}

@@ -1,0 +1,22 @@
+<h2>Leer libro</h2>
+<p>Pulsa en abrir para abrir un libro</p>
+<button id="btnOpen">Abrir libro</button>
+@section scripts
+{
+	<script type="text/javascript">
+		$(function () {
+			$("html").on("click", "#btnOpen", function (e) {
+				const { dialog } = require('electron').remote
+				filePath = dialog.showOpenDialog({
+					title: "Abrir libro en formato Epub",
+					buttonLabel: "Abrir libro",
+					filters: [
+						{ name: "Libros en formato Epub", extensions: ["epub"] }
+					],
+					properties: ['openFile']
+				})
+				document.location = "/EbookReader/Read?path=" + encodeURI(filePath);
+		});
+		});
+	</script>
+}

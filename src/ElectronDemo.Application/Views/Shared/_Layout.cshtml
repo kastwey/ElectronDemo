@@ -1,0 +1,78 @@
+﻿@*inject Microsoft.ApplicationInsights.AspNetCore.JavaScriptSnippet JavaScriptSnippet*@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>@ViewData["Title"] - Electron demo</title>
+
+	<environment names="Development">
+		<link rel="stylesheet" href="http://localhost:50693/lib/bootstrap/dist/css/bootstrap.css" />
+		<link rel="stylesheet" href="http://localhost:50693/css/site.css" />
+	</environment>
+	<environment names="Staging,Production">
+		<link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css"
+			  asp-fallback-href="http://localhost:50693/lib/bootstrap/dist/css/bootstrap.min.css"
+			  asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
+		<link rel="stylesheet" href="http://localhost:50693/css/site.min.css" asp-append-version="true" />
+	</environment>
+	
+</head>
+<body>
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+					<span class="sr-only">Expandir o colapsar navegación</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">Electron Demo</a>
+			</div>
+			<div class="navbar-collapse collapse">
+				<ul class="nav navbar-nav">
+					<li><a asp-area="" asp-controller="Home" asp-action="Index">Inicio</a></li>
+					<li><a asp-area="" asp-controller="EbookReader" asp-action="Index">Leer epub</a></li>
+					<li><a asp-area="" asp-controller="Twitter" asp-action="Index">Twitter</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<div class="container body-content">
+		@RenderBody()
+		<hr />
+		<footer>
+			<p>&copy; 2017 - Juanjo Montiel</p>
+		</footer>
+	</div>
+
+	<environment names="Development">
+		
+		<!-- <script src="http://localhost:50693/lib/jquery/dist/jquery.min.js" integrity="" crossorigin="anonimous"></script> -->
+		<script type="text/javascript">
+			if (typeof module === 'object') {window.module = module; module = undefined;}
+		</script>
+		<script type="text/javascript" src="~/lib/jquery/dist/jquery-2.2.0.min.js"></script>
+		<script src="http://localhost:50693/lib/bootstrap/dist/js/bootstrap.js" integrity=""></script>
+		<script src="http://localhost:50693/js/site.js" asp-append-version="true" integrity=""></script>
+	</environment>
+	<environment names="Staging,Production">
+		<script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.2.0.min.js"
+				asp-fallback-src="http://localhost:50693/lib/jquery/dist/jquery.min.js"
+				asp-fallback-test="window.jQuery"
+				crossorigin="anonymous"
+				integrity="">
+		</script>
+		<script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/bootstrap.min.js"
+				asp-fallback-src="http://localhost:50693/lib/bootstrap/dist/js/bootstrap.min.js"
+				asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"
+				crossorigin="anonymous"
+				integrity="">
+		</script>
+		<script src="http://localhost:50693/js/site.min.js" asp-append-version="true"></script>
+	</environment>
+
+	@RenderSection("Scripts", required: false)
+</body>
+</html>

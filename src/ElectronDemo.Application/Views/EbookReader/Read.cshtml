@@ -1,0 +1,9 @@
+@model ElectronDemo.Application.Models.book
+@{
+    ViewData["Title"] = $"Leer epub {Model.Title}";
+}
+
+<h2>@Model.Title, de @Model.Author</h2>
+<img src="@Url.Action("GetCover", "EbookReader")" alt="Portada del libro" />
+<h3>Cap&iacute;tulos</h3>
+@Html.Partial("ChaptersList", Model.Chapters)

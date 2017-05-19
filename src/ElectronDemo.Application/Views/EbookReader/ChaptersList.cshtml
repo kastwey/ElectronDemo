@@ -1,0 +1,30 @@
+@model IEnumerable<ElectronDemo.Application.Models.Chapter>
+	<ul>
+		@foreach (var chapter in Model)
+		{
+			@Html.Raw(GetChaptersList(chapter))
+		}
+	</ul>
+
+
+	@functions
+	{
+		private string GetChaptersList(ElectronDemo.Application.Models.Chapter chapter)
+		{
+			System.Text.StringBuilder strBuilder = new System.Text.StringBuilder();
+			strBuilder.AppendLine("<li><a href=\"" + chapter.FileName + "\">" + chapter.Title + "</a>");
+
+			if (chapter.Chapters != null && chapter.Chapters.Count() > 0)
+			{
+				strBuilder.AppendLine("<ul>");
+				foreach (var subchapter in chapter.Chapters)
+				{
+					strBuilder.Append(GetChaptersList(subchapter));
+				}
+				strBuilder.AppendLine("</ul>");
+			}
+			strBuilder.AppendLine("</li>");
+			return strBuilder.ToString();
+
+		}
+	}
