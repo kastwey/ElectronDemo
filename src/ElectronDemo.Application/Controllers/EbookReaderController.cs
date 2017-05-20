@@ -73,7 +73,7 @@ namespace ElectronDemo.Application.Controllers
 			return bookChapter.HtmlContent + Environment.NewLine +
 				"<p><a href=\"" + Url.Action("Read", "EbookReader", new { path = path }) + "\">Volver al índice.</a></p>";
 		}
-
+		[HttpPost]
 		public IActionResult Export(string bookPath, string exportPath)
 		{
 			if (!System.IO.File.Exists(bookPath))

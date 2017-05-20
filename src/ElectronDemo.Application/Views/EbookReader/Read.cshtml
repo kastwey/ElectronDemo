@@ -23,7 +23,20 @@
 					]
 				})
 				if (filePath != null && filePath.length > 0) {
-					document.location = "/EbookReader/Export?bookPath=" + encodeURI("@Model.FileName.Replace("\\","\\\\")") + "&exportPath=" + encodeURI(filePath);
+					$.ajax("/EbookReader/Export?bookPath=" + encodeURI("@Model.FileName.Replace("\\","\\\\")") + "&exportPath=" + encodeURI(filePath),
+						{
+							accept: "application/json", method: "post"
+						})
+						.done(function () {
+							dialog.showMessageBox({
+								type: "info", buttons: ["¡Oooolé!"],
+								title: "¡Libro exportado!",
+								message: "El libro @System.Net.WebUtility.HtmlDecode(Model.Title), de @Model.Author, se ha exportado satisfactoriamente a texto plano."
+							});
+						})
+						.fail(function () {
+							alert("¡Error al exportar!");
+						});
 				}
 			});
 		});
