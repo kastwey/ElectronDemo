@@ -9,12 +9,6 @@
 {
 	<script type="text/javascript">
 		$(function () {
-			alert("¡Hola!");
-			$("#btnPress").on("click", function (e) {
-				alert("si!");
-				const { dialog }  = require('electron').remote
-				console.log(dialog.showOpenDialog({ properties: ['openFile', 'openDirectory', 'multiSelections'] }))
-			});
 		});
 
 	</script>

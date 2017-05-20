@@ -1,9 +1,31 @@
 @model ElectronDemo.Application.Models.book
-@{
-    ViewData["Title"] = $"Leer epub {Model.Title}";
+@{ViewData["Title"] = $"Leer epub {Model.Title}";
 }
 
 <h2>@Model.Title, de @Model.Author</h2>
-<img src="@Url.Action("GetCover", "EbookReader")" alt="Portada del libro" />
-<h3>Cap&iacute;tulos</h3>
-@Html.Partial("ChaptersList", Model.Chapters)
+<div class="jumbotron">
+	<button class="btn btn-primary" id="btnExport">Exportar libro a texto plano</button>
+	<h3>Cap&iacute;tulos</h3>
+	@Html.Partial("_ChaptersList", Model.Chapters)
+</div>
+
+@section scripts
+{
+	<script type="text/javascript">
+		$(function () {
+			$("html").on("click", "#btnExport", function (e) {
+				const { dialog } = require('electron').remote
+				filePath = dialog.showSaveDialog({
+					title: "exportar libro a texto plano",
+					buttonLabel: "Exportar libro",
+					filters: [
+						{ name: "ficheros de texto plano", extensions: ["txt"] }
+					]
+				})
+				if (filePath != null && filePath.length > 0) {
+					document.location = "/EbookReader/Export?bookPath=" + encodeURI("@Model.FileName.Replace("\\","\\\\")") + "&exportPath=" + encodeURI(filePath);
+				}
+			});
+		});
+	</script>
+}

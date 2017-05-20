@@ -7,6 +7,7 @@ const url = require('url')
 let win
 
 function createWindow() {
+/*
 	
 	var child = require('child_process').execFile;
 	child('dotnet', ['run'], {
@@ -15,7 +16,7 @@ function createWindow() {
 		createWindow: false,
 		shell: false
 	});
-	
+	*/
 	setTimeout(function () {
 		// Create the browser window.
 		win = new BrowserWindow({ width: 800, height: 600 })

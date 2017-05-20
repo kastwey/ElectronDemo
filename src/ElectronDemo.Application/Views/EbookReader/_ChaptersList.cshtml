@@ -12,7 +12,7 @@
 		private string GetChaptersList(ElectronDemo.Application.Models.Chapter chapter)
 		{
 			System.Text.StringBuilder strBuilder = new System.Text.StringBuilder();
-			strBuilder.AppendLine("<li><a href=\"" + chapter.FileName + "\">" + chapter.Title + "</a>");
+			strBuilder.AppendLine("<li><a href=\"" + Url.Action("ReadChapter", "EbookReader", new { path = chapter.Book.FileName, chapter = chapter.FileName }) + "\">" + chapter.Title + "</a>");
 
 			if (chapter.Chapters != null && chapter.Chapters.Count() > 0)
 			{

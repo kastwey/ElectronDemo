@@ -7,6 +7,8 @@ namespace ElectronDemo.Application.Models
 {
     public class Chapter
     {
+		public book Book { get; set; }
+
 		public string Title { get; set; }
 
 		public string FileName { get; set; }

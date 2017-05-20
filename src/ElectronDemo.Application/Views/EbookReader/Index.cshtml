@@ -15,7 +15,9 @@
 					],
 					properties: ['openFile']
 				})
-				document.location = "/EbookReader/Read?path=" + encodeURI(filePath);
+				if (filePath != null && filePath.length > 0) {
+					document.location = "/EbookReader/Read?path=" + encodeURI(filePath);
+				}
 		});
 		});
 	</script>
